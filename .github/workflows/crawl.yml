@@ -1,0 +1,46 @@
+name: Update Loto6 Data
+
+# 매주 월요일, 목요일 21:30 (JST 추첨 후) 자동 실행
+on:
+  schedule:
+    # UTC 시간 기준: JST 21:30 = UTC 12:30
+    - cron: '30 12 * * 1,4'  # 월요일, 목요일 12:30 UTC
+  
+  # 수동 실행도 가능
+  workflow_dispatch:
+
+jobs:
+  crawl-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: 📦 Install dependencies
+        run: npm install
+        
+      - name: 🔍 Crawl Loto6 data
+        run: npm run crawl
+        
+      - name: 📊 Check data files
+        run: |
+          echo "=== Data files created ==="
+          ls -lh data/
+          echo "=== Latest data ==="
+          cat data/latest.json
+        
+      - name: 📤 Commit and push
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git add data/
+          git diff --quiet && git diff --staged --quiet || git commit -m "🎰 Update Loto6 data - $(date +'%Y-%m-%d %H:%M')"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
