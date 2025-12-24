@@ -27,20 +27,35 @@ jobs:
         
       - name: 🔍 Crawl Loto6 data
         run: npm run crawl
+        continue-on-error: false  # 크롤링 실패 시 워크플로우 중단
         
       - name: 📊 Check data files
         run: |
           echo "=== Data files created ==="
-          ls -lh data/
-          echo "=== Latest data ==="
-          cat data/latest.json
+          ls -lh data/loto6/ || echo "No data directory"
+          if [ -f data/loto6/latest.json ]; then
+            echo "=== Latest data ==="
+            cat data/loto6/latest.json
+          else
+            echo "❌ latest.json not found - crawl failed!"
+            exit 1
+          fi
         
       - name: 📤 Commit and push
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
-          git add data/
-          git diff --quiet && git diff --staged --quiet || git commit -m "🎰 Update Loto6 data - $(date +'%Y-%m-%d %H:%M')"
-          git push
+          git add data/loto6/
+          
+          # 변경사항이 있을 때만 커밋
+          if git diff --staged --quiet; then
+            echo "⚠️  변경사항 없음 - 커밋 건너뜀"
+          else
+            # latest.json에서 회차 정보 추출
+            ROUND=$(cat data/loto6/latest.json | grep -o '"round": [0-9]*' | grep -o '[0-9]*')
+            git commit -m "🎰 Update Loto6 data - 第${ROUND}回 ($(date +'%Y-%m-%d %H:%M JST'))"
+            git push
+            echo "✅ 데이터 업데이트 완료!"
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

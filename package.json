@@ -4,10 +4,10 @@
   "description": "Japan lottery winning numbers API (Loto6, Loto7, Mini Loto, etc)",
   "main": "crawl.js",
   "scripts": {
-    "crawl": "node crawl.js"
+    "crawl": "node crawl.js",
+    "init-data": "node init-historical-data.js"
   },
   "dependencies": {
-    "axios": "^1.6.2",
-    "cheerio": "^1.0.0-rc.12"
+    "puppeteer": "^21.11.0"
   }
 }
