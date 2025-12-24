@@ -1,81 +1,92 @@
-const puppeteer = require('puppeteer');
+const axios = require('axios');
+const iconv = require('iconv-lite');
 const fs = require('fs');
 const path = require('path');
 
 async function crawlLatestLoto6() {
-  let browser;
   try {
-    console.log('🔍 로또6 실제 크롤링 시작...');
+    console.log('🔍 로또6 크롤링 시작...');
     
-    browser = await puppeteer.launch({
-      headless: 'new',
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
-    });
-    
-    const page = await browser.newPage();
-    console.log('📄 페이지 로딩 중...');
-    
-    await page.goto('https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto6/index.html', {
-      waitUntil: 'networkidle2',
-      timeout: 30000
-    });
-    
-    console.log('🔎 당첨번호 추출 중...');
-    
-    // 페이지에서 당첨번호 정보 추출
-    const result = await page.evaluate(() => {
-      // 회차 번호 찾기
-      const roundElement = document.querySelector('.box-winning-no .heading-lv3-01');
-      if (!roundElement) return null;
-      
-      const roundText = roundElement.textContent;
-      const roundMatch = roundText.match(/第(\d+)回/);
-      if (!roundMatch) return null;
-      
-      const round = parseInt(roundMatch[1]);
-      
-      // 추첨일 찾기
-      const dateElement = document.querySelector('.box-winning-no .date');
-      let date = new Date().toISOString().split('T')[0];
-      
-      if (dateElement) {
-        const dateText = dateElement.textContent.trim();
-        const dateMatch = dateText.match(/(\d{4})年(\d{1,2})月(\d{1,2})日/);
-        if (dateMatch) {
-          const year = dateMatch[1];
-          const month = dateMatch[2].padStart(2, '0');
-          const day = dateMatch[3].padStart(2, '0');
-          date = `${year}-${month}-${day}`;
-        }
+    // Step 1: 최신 CSV 파일명 가져오기
+    const nameUrl = 'https://www.mizuhobank.co.jp/takarakuji/apl/txt/loto6/name.txt';
+    const nameResponse = await axios.get(nameUrl, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
       }
-      
-      // 본수字 (당첨번호) 찾기
-      const numberElements = document.querySelectorAll('.box-winning-no .win-num01 .num');
-      const numbers = Array.from(numberElements)
-        .map(el => parseInt(el.textContent.trim()))
-        .filter(n => !isNaN(n))
-        .sort((a, b) => a - b);
-      
-      // ボーナス数字 (보너스 번호) 찾기
-      const bonusElement = document.querySelector('.box-winning-no .win-num02 .num');
-      const bonus = bonusElement ? parseInt(bonusElement.textContent.trim()) : null;
-      
-      if (numbers.length !== 6 || !bonus) {
-        return null;
-      }
-      
-      return {
-        type: 'loto6',
-        round,
-        date,
-        numbers,
-        bonus
-      };
     });
     
-    if (!result) {
-      throw new Error('당첨번호를 찾을 수 없습니다');
+    const lines = nameResponse.data.split('\n');
+    const latestLine = lines.find(line => line.startsWith('NAME'));
+    if (!latestLine) {
+      throw new Error('CSV 파일명을 찾을 수 없습니다');
     }
+    
+    const csvFileName = latestLine.split('\t')[1].trim();
+    console.log(`📄 최신 CSV 파일: ${csvFileName}`);
+    
+    // Step 2: CSV 파일 다운로드 (Shift-JIS 인코딩)
+    const csvUrl = `https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto6/csv/${csvFileName}`;
+    const csvResponse = await axios.get(csvUrl, {
+      responseType: 'arraybuffer',
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
+      }
+    });
+    
+    // Shift-JIS → UTF-8 변환
+    const csvText = iconv.decode(Buffer.from(csvResponse.data), 'shift-jis');
+    const csvLines = csvText.split('\n').map(line => line.trim()).filter(line => line);
+    
+    console.log(`📝 CSV 라인 수: ${csvLines.length}`);
+    console.log(`첫 3줄:\n${csvLines.slice(0, 3).join('\n')}`);
+    
+    // Step 3: CSV 파싱
+    // 1번 줄: 第2062回ロト６,数字選択式全国自治宝くじ,令和7年12月22日,東京 宝くじドリーム館
+    const firstLine = csvLines[1];
+    const roundMatch = firstLine.match(/第(\d+)回/);
+    if (!roundMatch) {
+      throw new Error('회차 번호를 찾을 수 없습니다');
+    }
+    const round = parseInt(roundMatch[1]);
+    
+    // 추첨일 파싱 (令和7年12月22日 → 2025-12-22)
+    const dateMatch = firstLine.match(/令和(\d+)年(\d+)月(\d+)日/);
+    if (!dateMatch) {
+      throw new Error('추첨일을 찾을 수 없습니다');
+    }
+    const year = 2018 + parseInt(dateMatch[1]);
+    const month = dateMatch[2].padStart(2, '0');
+    const day = dateMatch[3].padStart(2, '0');
+    const date = `${year}-${month}-${day}`;
+    
+    // 3번 줄: 本数字,01,09,18,24,35,42,ボーナス数字,08
+    const numbersLine = csvLines[3];
+    const numbersParts = numbersLine.split(',');
+    
+    const numbers = [];
+    let bonus = null;
+    
+    for (let i = 1; i < numbersParts.length; i++) {
+      const part = numbersParts[i].trim();
+      if (part === 'ボーナス数字') {
+        bonus = parseInt(numbersParts[i + 1]);
+        break;
+      } else if (part && !isNaN(parseInt(part))) {
+        numbers.push(parseInt(part));
+      }
+    }
+    
+    if (numbers.length !== 6 || !bonus) {
+      throw new Error(`데이터 불완전: 본수자 ${numbers.length}개, 보너스 ${bonus}`);
+    }
+    
+    const result = {
+      type: 'loto6',
+      round,
+      date,
+      numbers: numbers.sort((a, b) => a - b),
+      bonus
+    };
     
     console.log('✅ 크롤링 성공!');
     console.log(JSON.stringify(result, null, 2));
@@ -84,11 +95,8 @@ async function crawlLatestLoto6() {
     
   } catch (error) {
     console.error('❌ 크롤링 실패:', error.message);
+    console.error(error.stack);
     return null;
-  } finally {
-    if (browser) {
-      await browser.close();
-    }
   }
 }
 
@@ -96,7 +104,7 @@ async function saveToFile(data) {
   if (!data) {
     console.error('❌ 크롤링 실패: 데이터가 없어 저장하지 않습니다.');
     console.error('⚠️  더미 데이터 대신 에러 상태를 유지합니다.');
-    process.exit(1); // 실패 코드로 종료
+    process.exit(1);
   }
   
   const dataDir = path.join(__dirname, 'data', 'loto6');
