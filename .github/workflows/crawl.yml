@@ -1,10 +1,12 @@
-name: Update Loto6 Data
+name: Update Lottery Data
 
-# 매주 월요일, 목요일 21:30 (JST 추첨 후) 자동 실행
+# 매주 월, 화, 목, 금 19:00 ~ 21:50 (JST) 10분 간격 실행
+# 월(1)/목(4): Loto6, 화(2): Mini Loto, 금(5): Loto7
 on:
   schedule:
-    # UTC 시간 기준: JST 21:30 = UTC 12:30
-    - cron: '30 12 * * 1,4'  # 월요일, 목요일 12:30 UTC
+    # UTC 시간 기준: JST 19:00 ~ 21:50 (UTC 10:00 ~ 12:50)
+    # 요일: 1(월), 2(화), 4(목), 5(금)
+    - cron: '*/10 10-12 * * 1,2,4,5'
   
   # 수동 실행도 가능
   workflow_dispatch:
@@ -25,37 +27,40 @@ jobs:
       - name: 📦 Install dependencies
         run: npm install
         
-      - name: 🔍 Crawl Loto6 data
-        run: npm run crawl
-        continue-on-error: false  # 크롤링 실패 시 워크플로우 중단
+      - name: 🔍 Crawl Lottery data (Day-based)
+        run: |
+          # 요일 확인 (1=월, 2=화, ..., 7=일)
+          DOW=$(date +%u)
+          echo "📅 Today is day $DOW (1=Mon, 2=Tue, 4=Thu, 5=Fri)"
+
+          if [ "$DOW" -eq 1 ] || [ "$DOW" -eq 4 ]; then
+            echo "🎰 [Mon/Thu] Running Loto6 Crawler..."
+            node loto6-crawl.js
+          elif [ "$DOW" -eq 2 ]; then
+            echo "🎰 [Tue] Running Mini Loto Crawler..."
+            node miniloto-crawl.js
+          elif [ "$DOW" -eq 5 ]; then
+            echo "🎰 [Fri] Running Loto7 Crawler..."
+            node loto7-crawl.js
+          fi
+        continue-on-error: false
         
       - name: 📊 Check data files
         run: |
           echo "=== Data files created ==="
-          ls -lh data/loto6/ || echo "No data directory"
-          if [ -f data/loto6/latest.json ]; then
-            echo "=== Latest data ==="
-            cat data/loto6/latest.json
-          else
-            echo "❌ latest.json not found - crawl failed!"
-            exit 1
-          fi
+          ls -R data/
         
       - name: 📤 Commit and push
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
-          git add data/loto6/
+          git add data/
           
           # 변경사항이 있을 때만 커밋
           if git diff --staged --quiet; then
             echo "⚠️  변경사항 없음 - 커밋 건너뜀"
           else
-            # latest.json에서 회차 정보 추출
-            ROUND=$(cat data/loto6/latest.json | grep -o '"round": [0-9]*' | grep -o '[0-9]*')
-            git commit -m "🎰 Update Loto6 data - 第${ROUND}回 ($(date +'%Y-%m-%d %H:%M JST'))"
+            git commit -m "🎰 Update Lottery data ($(date +'%Y-%m-%d %H:%M JST'))"
             git push
             echo "✅ 데이터 업데이트 완료!"
           fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -24,6 +24,19 @@ async function crawlLatestMiniloto() {
     const csvFileName = latestLine.split('\t')[1].trim();
     console.log(`📄 최신 CSV 파일: ${csvFileName}`);
     
+    // [추가] 중복 실행 방지: 로컬에 이미 최신 회차가 있으면 다운로드 건너뜀
+    try {
+      const latestFile = path.join(__dirname, 'data', 'miniloto', 'latest.json');
+      if (fs.existsSync(latestFile)) {
+        const localData = JSON.parse(fs.readFileSync(latestFile, 'utf8'));
+        const match = csvFileName.match(/A101(\d{4})\.CSV/i); // Mini Loto는 A101
+        if (match && localData.round === parseInt(match[1])) {
+          console.log(`✅ 이미 최신 회차(${localData.round}회)가 존재합니다. 스킵합니다.`);
+          return { skipped: true };
+        }
+      }
+    } catch (e) { /* 무시하고 진행 */ }
+    
     // Step 2: CSV 파일 다운로드 (Shift-JIS 인코딩)
     const csvUrl = `https://www.mizuhobank.co.jp/retail/takarakuji/loto/miniloto/csv/${csvFileName}`;
     const csvResponse = await axios.get(csvUrl, {
@@ -153,6 +166,10 @@ async function saveToFile(data) {
 async function main() {
   console.log('🎰 Miniloto Crawler');
   const data = await crawlLatestMiniloto();
+  if (data && data.skipped) {
+    console.log('⏭️  변경사항 없음 - 종료');
+    return;
+  }
   await saveToFile(data);
   console.log('✅ 완료!');
 }
