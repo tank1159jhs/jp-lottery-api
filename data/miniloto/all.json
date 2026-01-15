@@ -1,0 +1,1289 @@
+[
+  {
+    "type": "miniloto",
+    "round": 1369,
+    "date": "2026-01-13",
+    "numbers": [
+      1,
+      2,
+      3,
+      5,
+      11
+    ],
+    "bonus": 26
+  },
+  {
+    "type": "miniloto",
+    "round": 1368,
+    "date": "2026-01-06",
+    "numbers": [
+      7,
+      8,
+      20,
+      25,
+      26
+    ],
+    "bonus": 24
+  },
+  {
+    "type": "miniloto",
+    "round": 1367,
+    "date": "2025-12-30",
+    "numbers": [
+      17,
+      21,
+      27,
+      28,
+      29
+    ],
+    "bonus": 2
+  },
+  {
+    "type": "miniloto",
+    "round": 1366,
+    "date": "2025-12-23",
+    "numbers": [
+      3,
+      19,
+      20,
+      21,
+      28
+    ],
+    "bonus": 13
+  },
+  {
+    "type": "miniloto",
+    "round": 1365,
+    "date": "2025-12-16",
+    "numbers": [
+      3,
+      10,
+      20,
+      25,
+      27
+    ],
+    "bonus": 24
+  },
+  {
+    "type": "miniloto",
+    "round": 1364,
+    "date": "2025-12-09",
+    "numbers": [
+      1,
+      3,
+      10,
+      27,
+      31
+    ],
+    "bonus": 19
+  },
+  {
+    "type": "miniloto",
+    "round": 1363,
+    "date": "2025-12-02",
+    "numbers": [
+      6,
+      12,
+      16,
+      19,
+      31
+    ],
+    "bonus": 25
+  },
+  {
+    "type": "miniloto",
+    "round": 1362,
+    "date": "2025-11-25",
+    "numbers": [
+      6,
+      12,
+      13,
+      17,
+      26
+    ],
+    "bonus": 18
+  },
+  {
+    "type": "miniloto",
+    "round": 1361,
+    "date": "2025-11-18",
+    "numbers": [
+      20,
+      25,
+      26,
+      27,
+      30
+    ],
+    "bonus": 13
+  },
+  {
+    "type": "miniloto",
+    "round": 1360,
+    "date": "2025-11-11",
+    "numbers": [
+      4,
+      18,
+      20,
+      24,
+      29
+    ],
+    "bonus": 31
+  },
+  {
+    "type": "miniloto",
+    "round": 1359,
+    "date": "2025-11-04",
+    "numbers": [
+      1,
+      3,
+      15,
+      16,
+      20
+    ],
+    "bonus": 13
+  },
+  {
+    "type": "miniloto",
+    "round": 1358,
+    "date": "2025-10-28",
+    "numbers": [
+      1,
+      6,
+      22,
+      27,
+      29
+    ],
+    "bonus": 28
+  },
+  {
+    "type": "miniloto",
+    "round": 1357,
+    "date": "2025-10-21",
+    "numbers": [
+      7,
+      9,
+      21,
+      25,
+      28
+    ],
+    "bonus": 15
+  },
+  {
+    "type": "miniloto",
+    "round": 1356,
+    "date": "2025-10-14",
+    "numbers": [
+      6,
+      7,
+      20,
+      22,
+      24
+    ],
+    "bonus": 5
+  },
+  {
+    "type": "miniloto",
+    "round": 1355,
+    "date": "2025-10-07",
+    "numbers": [
+      3,
+      6,
+      10,
+      23,
+      27
+    ],
+    "bonus": 15
+  },
+  {
+    "type": "miniloto",
+    "round": 1354,
+    "date": "2025-09-30",
+    "numbers": [
+      11,
+      13,
+      15,
+      16,
+      26
+    ],
+    "bonus": 2
+  },
+  {
+    "type": "miniloto",
+    "round": 1353,
+    "date": "2025-09-23",
+    "numbers": [
+      6,
+      11,
+      13,
+      14,
+      18
+    ],
+    "bonus": 5
+  },
+  {
+    "type": "miniloto",
+    "round": 1352,
+    "date": "2025-09-16",
+    "numbers": [
+      5,
+      8,
+      10,
+      11,
+      29
+    ],
+    "bonus": 27
+  },
+  {
+    "type": "miniloto",
+    "round": 1351,
+    "date": "2025-09-09",
+    "numbers": [
+      4,
+      9,
+      10,
+      19,
+      29
+    ],
+    "bonus": 6
+  },
+  {
+    "type": "miniloto",
+    "round": 1350,
+    "date": "2025-09-02",
+    "numbers": [
+      2,
+      3,
+      11,
+      22,
+      28
+    ],
+    "bonus": 15
+  },
+  {
+    "type": "miniloto",
+    "round": 1349,
+    "date": "2025-08-26",
+    "numbers": [
+      2,
+      3,
+      15,
+      28,
+      29
+    ],
+    "bonus": 20
+  },
+  {
+    "type": "miniloto",
+    "round": 1348,
+    "date": "2025-08-19",
+    "numbers": [
+      4,
+      16,
+      20,
+      26,
+      28
+    ],
+    "bonus": 29
+  },
+  {
+    "type": "miniloto",
+    "round": 1347,
+    "date": "2025-08-12",
+    "numbers": [
+      4,
+      16,
+      18,
+      27,
+      31
+    ],
+    "bonus": 24
+  },
+  {
+    "type": "miniloto",
+    "round": 1346,
+    "date": "2025-08-05",
+    "numbers": [
+      5,
+      16,
+      20,
+      23,
+      30
+    ],
+    "bonus": 2
+  },
+  {
+    "type": "miniloto",
+    "round": 1345,
+    "date": "2025-07-29",
+    "numbers": [
+      3,
+      11,
+      14,
+      30,
+      31
+    ],
+    "bonus": 28
+  },
+  {
+    "type": "miniloto",
+    "round": 1344,
+    "date": "2025-07-22",
+    "numbers": [
+      2,
+      5,
+      21,
+      24,
+      28
+    ],
+    "bonus": 12
+  },
+  {
+    "type": "miniloto",
+    "round": 1343,
+    "date": "2025-07-15",
+    "numbers": [
+      4,
+      13,
+      22,
+      29,
+      30
+    ],
+    "bonus": 9
+  },
+  {
+    "type": "miniloto",
+    "round": 1342,
+    "date": "2025-07-08",
+    "numbers": [
+      1,
+      9,
+      13,
+      19,
+      23
+    ],
+    "bonus": 11
+  },
+  {
+    "type": "miniloto",
+    "round": 1341,
+    "date": "2025-07-01",
+    "numbers": [
+      5,
+      12,
+      16,
+      24,
+      28
+    ],
+    "bonus": 31
+  },
+  {
+    "type": "miniloto",
+    "round": 1340,
+    "date": "2025-06-24",
+    "numbers": [
+      8,
+      19,
+      22,
+      24,
+      27
+    ],
+    "bonus": 25
+  },
+  {
+    "type": "miniloto",
+    "round": 1339,
+    "date": "2025-06-17",
+    "numbers": [
+      6,
+      14,
+      21,
+      23,
+      31
+    ],
+    "bonus": 22
+  },
+  {
+    "type": "miniloto",
+    "round": 1338,
+    "date": "2025-06-10",
+    "numbers": [
+      13,
+      18,
+      21,
+      28,
+      31
+    ],
+    "bonus": 11
+  },
+  {
+    "type": "miniloto",
+    "round": 1337,
+    "date": "2025-06-03",
+    "numbers": [
+      3,
+      11,
+      17,
+      20,
+      22
+    ],
+    "bonus": 14
+  },
+  {
+    "type": "miniloto",
+    "round": 1336,
+    "date": "2025-05-27",
+    "numbers": [
+      3,
+      20,
+      21,
+      24,
+      25
+    ],
+    "bonus": 26
+  },
+  {
+    "type": "miniloto",
+    "round": 1335,
+    "date": "2025-05-20",
+    "numbers": [
+      12,
+      17,
+      18,
+      22,
+      31
+    ],
+    "bonus": 30
+  },
+  {
+    "type": "miniloto",
+    "round": 1334,
+    "date": "2025-05-13",
+    "numbers": [
+      3,
+      8,
+      21,
+      27,
+      29
+    ],
+    "bonus": 16
+  },
+  {
+    "type": "miniloto",
+    "round": 1333,
+    "date": "2025-05-06",
+    "numbers": [
+      7,
+      11,
+      18,
+      25,
+      26
+    ],
+    "bonus": 6
+  },
+  {
+    "type": "miniloto",
+    "round": 1332,
+    "date": "2025-04-29",
+    "numbers": [
+      12,
+      16,
+      17,
+      20,
+      25
+    ],
+    "bonus": 28
+  },
+  {
+    "type": "miniloto",
+    "round": 1331,
+    "date": "2025-04-22",
+    "numbers": [
+      9,
+      11,
+      13,
+      27,
+      28
+    ],
+    "bonus": 16
+  },
+  {
+    "type": "miniloto",
+    "round": 1330,
+    "date": "2025-04-15",
+    "numbers": [
+      1,
+      13,
+      24,
+      25,
+      31
+    ],
+    "bonus": 11
+  },
+  {
+    "type": "miniloto",
+    "round": 1329,
+    "date": "2025-04-08",
+    "numbers": [
+      5,
+      6,
+      8,
+      21,
+      30
+    ],
+    "bonus": 23
+  },
+  {
+    "type": "miniloto",
+    "round": 1328,
+    "date": "2025-04-01",
+    "numbers": [
+      1,
+      12,
+      15,
+      27,
+      31
+    ],
+    "bonus": 18
+  },
+  {
+    "type": "miniloto",
+    "round": 1327,
+    "date": "2025-03-25",
+    "numbers": [
+      4,
+      9,
+      26,
+      27,
+      29
+    ],
+    "bonus": 16
+  },
+  {
+    "type": "miniloto",
+    "round": 1326,
+    "date": "2025-03-18",
+    "numbers": [
+      4,
+      9,
+      15,
+      19,
+      26
+    ],
+    "bonus": 3
+  },
+  {
+    "type": "miniloto",
+    "round": 1325,
+    "date": "2025-03-11",
+    "numbers": [
+      10,
+      15,
+      22,
+      23,
+      25
+    ],
+    "bonus": 13
+  },
+  {
+    "type": "miniloto",
+    "round": 1324,
+    "date": "2025-03-04",
+    "numbers": [
+      5,
+      6,
+      14,
+      20,
+      27
+    ],
+    "bonus": 1
+  },
+  {
+    "type": "miniloto",
+    "round": 1323,
+    "date": "2025-02-25",
+    "numbers": [
+      4,
+      9,
+      18,
+      24,
+      25
+    ],
+    "bonus": 15
+  },
+  {
+    "type": "miniloto",
+    "round": 1322,
+    "date": "2025-02-18",
+    "numbers": [
+      5,
+      16,
+      18,
+      22,
+      28
+    ],
+    "bonus": 6
+  },
+  {
+    "type": "miniloto",
+    "round": 1321,
+    "date": "2025-02-11",
+    "numbers": [
+      1,
+      5,
+      6,
+      24,
+      25
+    ],
+    "bonus": 11
+  },
+  {
+    "type": "miniloto",
+    "round": 1320,
+    "date": "2025-02-04",
+    "numbers": [
+      2,
+      3,
+      7,
+      25,
+      28
+    ],
+    "bonus": 4
+  },
+  {
+    "type": "miniloto",
+    "round": 1319,
+    "date": "2025-01-28",
+    "numbers": [
+      4,
+      6,
+      16,
+      26,
+      29
+    ],
+    "bonus": 31
+  },
+  {
+    "type": "miniloto",
+    "round": 1318,
+    "date": "2025-01-21",
+    "numbers": [
+      5,
+      7,
+      15,
+      24,
+      29
+    ],
+    "bonus": 12
+  },
+  {
+    "type": "miniloto",
+    "round": 1317,
+    "date": "2025-01-14",
+    "numbers": [
+      7,
+      22,
+      26,
+      30,
+      31
+    ],
+    "bonus": 11
+  },
+  {
+    "type": "miniloto",
+    "round": 1316,
+    "date": "2025-01-07",
+    "numbers": [
+      4,
+      7,
+      10,
+      11,
+      17
+    ],
+    "bonus": 23
+  },
+  {
+    "type": "miniloto",
+    "round": 1315,
+    "date": "2024-12-24",
+    "numbers": [
+      6,
+      15,
+      22,
+      29,
+      30
+    ],
+    "bonus": 13
+  },
+  {
+    "type": "miniloto",
+    "round": 1314,
+    "date": "2024-12-17",
+    "numbers": [
+      18,
+      20,
+      21,
+      23,
+      30
+    ],
+    "bonus": 25
+  },
+  {
+    "type": "miniloto",
+    "round": 1313,
+    "date": "2024-12-10",
+    "numbers": [
+      2,
+      5,
+      9,
+      22,
+      31
+    ],
+    "bonus": 15
+  },
+  {
+    "type": "miniloto",
+    "round": 1312,
+    "date": "2024-12-03",
+    "numbers": [
+      10,
+      12,
+      13,
+      21,
+      31
+    ],
+    "bonus": 23
+  },
+  {
+    "type": "miniloto",
+    "round": 1311,
+    "date": "2024-11-26",
+    "numbers": [
+      3,
+      11,
+      27,
+      28,
+      31
+    ],
+    "bonus": 26
+  },
+  {
+    "type": "miniloto",
+    "round": 1310,
+    "date": "2024-11-19",
+    "numbers": [
+      13,
+      14,
+      19,
+      24,
+      28
+    ],
+    "bonus": 3
+  },
+  {
+    "type": "miniloto",
+    "round": 1309,
+    "date": "2024-11-12",
+    "numbers": [
+      6,
+      12,
+      25,
+      27,
+      29
+    ],
+    "bonus": 22
+  },
+  {
+    "type": "miniloto",
+    "round": 1308,
+    "date": "2024-11-05",
+    "numbers": [
+      3,
+      8,
+      12,
+      16,
+      22
+    ],
+    "bonus": 29
+  },
+  {
+    "type": "miniloto",
+    "round": 1307,
+    "date": "2024-10-29",
+    "numbers": [
+      11,
+      13,
+      16,
+      18,
+      20
+    ],
+    "bonus": 19
+  },
+  {
+    "type": "miniloto",
+    "round": 1306,
+    "date": "2024-10-22",
+    "numbers": [
+      5,
+      7,
+      27,
+      28,
+      29
+    ],
+    "bonus": 16
+  },
+  {
+    "type": "miniloto",
+    "round": 1305,
+    "date": "2024-10-15",
+    "numbers": [
+      7,
+      12,
+      14,
+      29,
+      30
+    ],
+    "bonus": 4
+  },
+  {
+    "type": "miniloto",
+    "round": 1304,
+    "date": "2024-10-08",
+    "numbers": [
+      3,
+      4,
+      6,
+      20,
+      31
+    ],
+    "bonus": 2
+  },
+  {
+    "type": "miniloto",
+    "round": 1303,
+    "date": "2024-10-01",
+    "numbers": [
+      7,
+      14,
+      17,
+      30,
+      31
+    ],
+    "bonus": 22
+  },
+  {
+    "type": "miniloto",
+    "round": 1302,
+    "date": "2024-09-24",
+    "numbers": [
+      6,
+      11,
+      12,
+      17,
+      24
+    ],
+    "bonus": 4
+  },
+  {
+    "type": "miniloto",
+    "round": 1301,
+    "date": "2024-09-17",
+    "numbers": [
+      13,
+      15,
+      25,
+      26,
+      27
+    ],
+    "bonus": 17
+  },
+  {
+    "type": "miniloto",
+    "round": 1300,
+    "date": "2024-09-10",
+    "numbers": [
+      1,
+      4,
+      16,
+      27,
+      31
+    ],
+    "bonus": 15
+  },
+  {
+    "type": "miniloto",
+    "round": 1299,
+    "date": "2024-09-03",
+    "numbers": [
+      3,
+      4,
+      9,
+      11,
+      18
+    ],
+    "bonus": 7
+  },
+  {
+    "type": "miniloto",
+    "round": 1298,
+    "date": "2024-08-27",
+    "numbers": [
+      2,
+      4,
+      12,
+      13,
+      17
+    ],
+    "bonus": 29
+  },
+  {
+    "type": "miniloto",
+    "round": 1297,
+    "date": "2024-08-20",
+    "numbers": [
+      1,
+      12,
+      17,
+      21,
+      28
+    ],
+    "bonus": 31
+  },
+  {
+    "type": "miniloto",
+    "round": 1296,
+    "date": "2024-08-13",
+    "numbers": [
+      9,
+      13,
+      18,
+      19,
+      21
+    ],
+    "bonus": 6
+  },
+  {
+    "type": "miniloto",
+    "round": 1295,
+    "date": "2024-08-06",
+    "numbers": [
+      4,
+      11,
+      12,
+      21,
+      26
+    ],
+    "bonus": 28
+  },
+  {
+    "type": "miniloto",
+    "round": 1294,
+    "date": "2024-07-30",
+    "numbers": [
+      8,
+      21,
+      22,
+      27,
+      29
+    ],
+    "bonus": 1
+  },
+  {
+    "type": "miniloto",
+    "round": 1293,
+    "date": "2024-07-23",
+    "numbers": [
+      6,
+      8,
+      10,
+      20,
+      28
+    ],
+    "bonus": 15
+  },
+  {
+    "type": "miniloto",
+    "round": 1292,
+    "date": "2024-07-16",
+    "numbers": [
+      6,
+      11,
+      21,
+      23,
+      25
+    ],
+    "bonus": 27
+  },
+  {
+    "type": "miniloto",
+    "round": 1291,
+    "date": "2024-07-09",
+    "numbers": [
+      1,
+      2,
+      8,
+      11,
+      29
+    ],
+    "bonus": 19
+  },
+  {
+    "type": "miniloto",
+    "round": 1290,
+    "date": "2024-07-02",
+    "numbers": [
+      21,
+      26,
+      27,
+      29,
+      31
+    ],
+    "bonus": 7
+  },
+  {
+    "type": "miniloto",
+    "round": 1289,
+    "date": "2024-06-25",
+    "numbers": [
+      17,
+      18,
+      21,
+      27,
+      30
+    ],
+    "bonus": 3
+  },
+  {
+    "type": "miniloto",
+    "round": 1288,
+    "date": "2024-06-18",
+    "numbers": [
+      4,
+      12,
+      14,
+      16,
+      22
+    ],
+    "bonus": 8
+  },
+  {
+    "type": "miniloto",
+    "round": 1287,
+    "date": "2024-06-11",
+    "numbers": [
+      10,
+      12,
+      23,
+      26,
+      30
+    ],
+    "bonus": 22
+  },
+  {
+    "type": "miniloto",
+    "round": 1286,
+    "date": "2024-06-04",
+    "numbers": [
+      9,
+      10,
+      12,
+      13,
+      30
+    ],
+    "bonus": 25
+  },
+  {
+    "type": "miniloto",
+    "round": 1285,
+    "date": "2024-05-28",
+    "numbers": [
+      4,
+      5,
+      18,
+      23,
+      25
+    ],
+    "bonus": 11
+  },
+  {
+    "type": "miniloto",
+    "round": 1284,
+    "date": "2024-05-21",
+    "numbers": [
+      4,
+      11,
+      23,
+      28,
+      31
+    ],
+    "bonus": 22
+  },
+  {
+    "type": "miniloto",
+    "round": 1283,
+    "date": "2024-05-14",
+    "numbers": [
+      1,
+      11,
+      25,
+      29,
+      31
+    ],
+    "bonus": 3
+  },
+  {
+    "type": "miniloto",
+    "round": 1282,
+    "date": "2024-05-07",
+    "numbers": [
+      2,
+      22,
+      23,
+      30,
+      31
+    ],
+    "bonus": 29
+  },
+  {
+    "type": "miniloto",
+    "round": 1281,
+    "date": "2024-04-30",
+    "numbers": [
+      4,
+      10,
+      15,
+      18,
+      24
+    ],
+    "bonus": 5
+  },
+  {
+    "type": "miniloto",
+    "round": 1280,
+    "date": "2024-04-23",
+    "numbers": [
+      7,
+      9,
+      14,
+      17,
+      20
+    ],
+    "bonus": 13
+  },
+  {
+    "type": "miniloto",
+    "round": 1279,
+    "date": "2024-04-16",
+    "numbers": [
+      1,
+      14,
+      18,
+      22,
+      28
+    ],
+    "bonus": 26
+  },
+  {
+    "type": "miniloto",
+    "round": 1278,
+    "date": "2024-04-09",
+    "numbers": [
+      3,
+      10,
+      19,
+      21,
+      31
+    ],
+    "bonus": 29
+  },
+  {
+    "type": "miniloto",
+    "round": 1277,
+    "date": "2024-04-02",
+    "numbers": [
+      2,
+      13,
+      18,
+      22,
+      28
+    ],
+    "bonus": 30
+  },
+  {
+    "type": "miniloto",
+    "round": 1276,
+    "date": "2024-03-26",
+    "numbers": [
+      4,
+      9,
+      13,
+      16,
+      31
+    ],
+    "bonus": 27
+  },
+  {
+    "type": "miniloto",
+    "round": 1275,
+    "date": "2024-03-19",
+    "numbers": [
+      6,
+      11,
+      12,
+      13,
+      14
+    ],
+    "bonus": 5
+  },
+  {
+    "type": "miniloto",
+    "round": 1274,
+    "date": "2024-03-12",
+    "numbers": [
+      1,
+      7,
+      8,
+      10,
+      14
+    ],
+    "bonus": 18
+  },
+  {
+    "type": "miniloto",
+    "round": 1273,
+    "date": "2024-03-05",
+    "numbers": [
+      7,
+      18,
+      20,
+      22,
+      23
+    ],
+    "bonus": 5
+  },
+  {
+    "type": "miniloto",
+    "round": 1272,
+    "date": "2024-02-27",
+    "numbers": [
+      3,
+      7,
+      14,
+      21,
+      30
+    ],
+    "bonus": 13
+  },
+  {
+    "type": "miniloto",
+    "round": 1271,
+    "date": "2024-02-20",
+    "numbers": [
+      16,
+      17,
+      19,
+      22,
+      23
+    ],
+    "bonus": 24
+  }
+]
