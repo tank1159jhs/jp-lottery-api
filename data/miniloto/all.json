@@ -1,6 +1,19 @@
 [
   {
     "type": "miniloto",
+    "round": 1399,
+    "date": "2026-08-11",
+    "numbers": [
+      5,
+      22,
+      26,
+      29,
+      30
+    ],
+    "bonus": 15
+  },
+  {
+    "type": "miniloto",
     "round": 1397,
     "date": "2026-07-28",
     "numbers": [
@@ -1285,18 +1298,5 @@
       17
     ],
     "bonus": 29
-  },
-  {
-    "type": "miniloto",
-    "round": 1297,
-    "date": "2024-08-20",
-    "numbers": [
-      1,
-      12,
-      17,
-      21,
-      28
-    ],
-    "bonus": 31
   }
 ]
